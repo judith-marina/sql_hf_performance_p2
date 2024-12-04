@@ -1,9 +1,11 @@
-### README: Hedge Fund Strategy Performance Analysis Project  
+### Hedge Fund Performance Analysis Project  
 
 ---
 
 ## Project Overview  
-This project demonstrates the end-to-end process of analyzing hedge fund strategy performance. It integrates data cleaning in **Excel**, reshaping in **Python**, and advanced analysis using **SQL**. The project showcases expertise in **data preprocessing**, **data manipulation**, and **data analysis** to provide actionable insights into hedge fund performance.  
+This project provides a comprehensive analysis of hedge fund strategies by managing, analyzing, and interpreting their performance data. It demonstrates the end-to-end process of data preparation, transformation, and analysis by integrating data cleaning in Excel, reshaping in Python, and advanced querying in SQL.
+
+The project highlights expertise in data preprocessing, data manipulation, data modeling, and advanced querying techniques, delivering actionable insights into hedge fund performance. By effectively using tools and methodologies, the project explores performance trends, compares strategies, and uncovers seasonal and volatility patterns, empowering informed decision-making for portfolio management and strategy evaluation.
 
 ---
 
