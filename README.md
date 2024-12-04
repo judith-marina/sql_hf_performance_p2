@@ -1,96 +1,66 @@
-### Hedge Fund Strategy Performance Analysis Project
+### README: Hedge Fund Strategy Performance Analysis Project  
 
 ---
 
 ## Project Overview  
-This project provides a comprehensive analysis of hedge fund strategies by managing and analyzing their performance data. It uses SQL to create and manipulate tables, import raw data, perform calculations, and generate insights on fund strategy performance over time. 
-
-The project involves key data operations, such as **data modeling**, **data manipulation**, and **advanced querying techniques**. Outputs include performance trends, strategy comparisons, seasonal performance patterns, volatility analysis, and more. This repository is structured to enable efficient exploration and reporting of hedge fund strategies.
+This project demonstrates the end-to-end process of analyzing hedge fund strategy performance. It integrates data cleaning in **Excel**, reshaping in **Python**, and advanced analysis using **SQL**. The project showcases expertise in **data preprocessing**, **data manipulation**, and **data analysis** to provide actionable insights into hedge fund performance.  
 
 ---
 
-## Key Features  
+## Workflow and Features  
 
-### 1. **Data Modeling**  
-- **Tables Created:**
-  - `FundStrategies`: Stores metadata about hedge fund strategies.  
-  - `FundPerformance`: Stores historical performance data associated with strategies.  
-  - `raw_data`: Temporary table to load raw CSV data for processing.  
-  - `fsfp`: Consolidated table created as a subquery to simplify performance analysis.  
+### 1. **Data Cleaning in Excel**  
+- Removed duplicate and inconsistent entries.  
+- Standardized formatting for dates, numerical fields, and strategy names.  
+- Ensured data integrity and compatibility for further processing.  
 
----
+### 2. **Data Reshaping in Python**  
+- Leveraged **Python** to transform data from a wide format to a long format, preparing it for database ingestion.  
+- Steps performed:  
+  - Loaded Excel data into Python using **Pandas**.  
+  - Unpivoted columns (wide to long transformation) to align performance metrics with corresponding strategies and dates.  
+  - Validated reshaped data for correctness and consistency.  
+- Key Libraries:  
+  - **Pandas** for data manipulation.  
+  - **NumPy** for numerical checks.  
 
-### 2. **Data Manipulation**  
-- Imported raw data from a CSV file and mapped it to normalized database tables using `INSERT` and `JOIN` queries.  
-- Performed transformations such as:  
-  - Adding metadata links between fund strategies and their performance data.  
-  - Filtering data for specific strategies, timeframes, and thresholds.  
-  - Categorizing monthly returns into performance levels.  
+### 3. **Data Management and Analysis in SQL**  
+- Created a relational database schema to manage hedge fund data efficiently.  
+  - Tables created:  
+    - `FundStrategies`: Stores metadata for each strategy.  
+    - `FundPerformance`: Stores monthly returns for each strategy.  
+  - Leveraged **PostgreSQL** for database operations.  
+- Imported reshaped data from Python into the database.  
 
----
-
-### 3. **Advanced Analytics**  
-- **Trend Analysis:**
+### 4. **SQL Queries for Analysis**  
+Performed detailed analysis with SQL, including:  
+- **Aggregations**:  
   - Calculated average monthly and yearly returns for each strategy.  
-  - Identified seasonal trends and performance categories (e.g., high, moderate, low).  
+  - Identified the most volatile strategies using standard deviation.  
+  - Found cumulative returns and rolling 3-month averages.  
+- **Trend Analysis**:  
+  - Seasonal performance trends (monthly and yearly).  
+  - Strategy performance for specific months (e.g., August).  
+- **Anomalies Detection**:  
+  - Identified months with exceptionally high or low returns.  
+- **Rankings**:  
+  - Ranked strategies based on total returns over the dataset's timeframe.  
+- **Performance Categorization**:  
+  - Added a performance category based on monthly returns (High, Moderate, Low).  
+- **Volatility and Risk**:  
+  - Compared strategies based on volatility.  
+  - Identified consistently positive-return strategies.  
 
-- **Volatility and Risk Assessment:**
-  - Found the most volatile strategy based on standard deviation of returns.  
-  - Detected anomalies in returns above or below specified thresholds.  
-
-- **Cumulative and Rolling Metrics:**
-  - Calculated cumulative returns for each strategy over time.  
-  - Generated rolling 3-month average returns to smooth short-term performance trends.  
-
-- **Performance Rankings:**
-  - Ranked strategies based on total returns over time.  
-
-- **Historical Insights:**
-  - Filtered and analyzed returns during specific timeframes (e.g., 2020).  
-  - Compared returns across strategies by year.  
-
----
-
-## Key SQL Commands  
-Here’s an overview of SQL operations used in the project:  
-
-1. **Data Definition (DDL)**  
-   - `CREATE TABLE`, `DROP TABLE`: To define and clean up database schema.  
-
-2. **Data Manipulation (DML)**  
-   - `INSERT INTO`, `SELECT`, `UPDATE`, `DELETE`: To handle and process data effectively.  
-   - `COPY FROM`: For importing raw data from CSV files.  
-
-3. **Data Querying**  
-   - `JOIN`: To combine data across tables.  
-   - `GROUP BY`, `ORDER BY`: For summarization and sorting.  
-   - `HAVING`, `CASE`: For conditional filtering and creating derived categories.  
-   - Window Functions (`SUM() OVER`, `RANK()`): To compute rolling and ranked metrics.  
-
-4. **Data Aggregation**  
-   - `AVG`, `STDDEV`, `SUM`: For statistical and financial calculations.  
+### 5. **Outputs**  
+- Generated actionable insights into the performance and risk profile of various hedge fund strategies.  
+- Highlighted best- and worst-performing strategies, along with their trends over time.  
 
 ---
 
-## Project Workflow  
-
-1. **Setup:**  
-   - Define database schema with normalized tables (`FundStrategies`, `FundPerformance`, `raw_data`).  
-   - Clean data and import into the database.  
-
-2. **Transformation:**  
-   - Map raw data to main tables.  
-   - Consolidate performance data into a single table (`fsfp`) for streamlined analysis.  
-
-3. **Analysis:**  
-   - Perform data exploration for key insights, trends, and metrics.  
-   - Filter data for specific strategies or timeframes.  
-
-4. **Reporting:**  
-   - Generate outputs for:
-     - Yearly and monthly averages.
-     - Performance categories.
-     - Strategy rankings and anomalies.
+## Tools and Technologies  
+- **Excel**: Data cleaning and initial formatting.  
+- **Python**: Data reshaping and validation.  
+  - Libraries: `Pandas`, `NumPy`.  
+- **SQL (PostgreSQL)**: Database management and advanced querying.  
 
 ---
-
